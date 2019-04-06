@@ -31,7 +31,7 @@ Absolute positioning removes the element from the flow of the document, and is p
 
 
 ## JavaScript questions
-**Note:** All the below solutions are available in [javascript-questions.js]('javascript-questions.js')
+**Note:** All the below solutions are available in [javascript-questions.js](javascript-questions.js)
 ```
 Const sales = [
     { itemSold: “Football”, price: 19.99, dateSold: ‘2018-04-07’, id: ‘j_123 },
