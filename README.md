@@ -31,6 +31,7 @@ Absolute positioning removes the element from the flow of the document, and is p
 
 
 ## JavaScript questions
+**Note:** All the below solutions are available in [javascript-questions.js]('javascript-questions.js')
 ```
 Const sales = [
     { itemSold: “Football”, price: 19.99, dateSold: ‘2018-04-07’, id: ‘j_123 },
@@ -41,6 +42,37 @@ Const sales = [
 ]
 ```
 ### 1. Write a function to return the sum of the price of all properties as a single value.
+```
+var sum = function(sales) {
+    var total = sales.reduce(function(acc, obj) {
+        return acc + obj.price;
+    }, 0);
+    return total.toFixed(2); // Result rounded to 2 decimal places. Weird that it wasn't already.
+};
+```
 ### 2. Write a function to only return the items which were sold in 2017.
+```
+var soldIn17 = function(sales) {
+    return sales.filter(function(obj) {
+        return obj.dateSold.includes('2017');
+    });
+};
+```
 ### 3. Write a function to return an array of all of the itemsSold properties as strings, sorted alphabetically.
+```
+var itemsSoldByTitle = function(sales) {
+    var itemArr = [];
+    sales.map(function(obj) {
+        itemArr.push(obj.itemSold);
+    });
+    return itemArr.sort();
+};
+```
 ### 4. Write a function which takes an id as an argument and returns the sale which matches the id.
+```
+var findById = function(sales, id) {
+    return sales.find(function(obj) {
+        return id === obj.id;
+    });
+};
+```
