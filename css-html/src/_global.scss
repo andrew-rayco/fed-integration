@@ -1,0 +1,15 @@
+// colour variables
+
+$white: #eee;
+$light-grey: #ccc;
+$grey: #aaa;
+$dark-grey: #333;
+
+
+// mixins
+
+@mixin above700 {
+    @media screen and (min-width: 700px) {
+        @content
+    }
+}

@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 2rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    min-height: 500px;
+    margin: 0 auto;
+    background: $light-grey;
+    border: 1px solid #333;
+
+    &.credit {
+        padding-top: 1rem;
+        font-size: .8rem;
+        color: $light-grey;
+        text-align: right;
+        background: none;
+        border: none;
+
+        a {
+            color: $grey;
+
+            &:hover {
+                color: $light-grey;
+            }
+        }
+    }
+}
+
+header, article, aside {
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $dark-grey;
+    color: $white;
+
+    input {
+        background-image: url('../img/magnifying-glass.svg');
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+        background-size: 1rem;
+    }
+}
+
+// Main section
+
+section {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+
+    @include above700 {
+        flex-direction: row;
+    }
+}
+
+article {
+    flex-grow: 3;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: $white;
+    border-bottom: 1px solid #333;
+
+    @include above700 {
+        border-bottom: none;
+        border-right: 1px solid #333;
+    }
+}
+
+aside {
+    flex-grow: 1;
+    font-style: italic;
+    color: $grey;
+    text-align: center;
+    background: $light-grey;
+}
