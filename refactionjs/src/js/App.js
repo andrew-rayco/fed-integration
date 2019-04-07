@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 import ReactDOM from 'react-dom'
+import '../css/index.scss';
 
 import Header from './Header'
 import NameList from './NameList'
