@@ -1,0 +1,25 @@
+{
+    "name": "fed-integration",
+    "version": "1.0.0",
+    "description": "Front End Developer - Technical Test",
+    "main": "javascript-questions.js",
+    "scripts": {
+        "start": "webpack-dev-server --open --mode development",
+        "build": "webpack -p",
+        "css-scss": "node-sass --watch css-html/src -o css-html/public/css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andrew-rayco/fed-integration.git"
+    },
+    "keywords": [],
+    "author": "Andy Condon",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andrew-rayco/fed-integration/issues"
+    },
+    "homepage": "https://github.com/andrew-rayco/fed-integration#readme",
+    "devDependencies": {
+        "node-sass": "^4.11.0"
+    }
+}
