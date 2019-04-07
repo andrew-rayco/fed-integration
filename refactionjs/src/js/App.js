@@ -17,10 +17,6 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <Route path="/" component={NameList} />
-          <Route exact path="/male" component={NameList} />
-          <Route exact path="/female" component={NameList} />
-          <Route exact path="/over30" component={NameList} />
-          <Route exact path="/under30" component={NameList} />
         </div>
       </Router>
     )
