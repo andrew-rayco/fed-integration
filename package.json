@@ -5,7 +5,9 @@
     "main": "javascript-questions.js",
     "scripts": {
         "start": "webpack-dev-server --open --mode development",
-        "build": "webpack -p",
+        "watch": "webpack --watch",
+        "start": "webpack --watch & webpack-dev-server --open-page 'webpack-dev-server/'",
+        "refaction-build": "webpack --config webpack.config.js",
         "css-scss": "node-sass --watch css-html/src -o css-html/public/css"
     },
     "repository": {
@@ -20,6 +22,13 @@
     },
     "homepage": "https://github.com/andrew-rayco/fed-integration#readme",
     "devDependencies": {
-        "node-sass": "^4.11.0"
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-preset-env": "^1.7.0",
+        "node-sass": "^4.11.0",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0",
+        "webpack-dev-server": "^3.2.1"
     }
 }
