@@ -27,13 +27,20 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: path.resolve(__dirname, "refactionjs/public")
+            MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader',
+                options: {
+                    importLoaders: 2,
+                    sourceMap: true
+                }
+            },
+            {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true
+                }
             }
-          },
-          "css-loader"
         ]
       }
     ]
