@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as peopleActions from '../actions/peopleActions';
+import * as peopleActions from '../../actions/peopleActions';
 import PropTypes from 'prop-types';
 
 class NameList extends React.Component {
@@ -11,11 +11,13 @@ class NameList extends React.Component {
   }
 
   renderPeople() {
-    const { people } = this.props;
+    const { people } = this.props.people;
     let peopleList = [];
-    people.map(person =>
-      peopleList.push(<li key={person._id}>{person.name} {person.age}</li>)
-    );
+    if (people) {
+      people.map(person =>
+        peopleList.push(<li key={person._id}>{person.name} {person.age}</li>)
+      );
+    }
     return peopleList;
   }
 
@@ -32,7 +34,10 @@ class NameList extends React.Component {
 
 NameList.propTypes = {
   peopleActions: PropTypes.object,
-  people: PropTypes.array
+  people: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ])
 };
 
 function mapStateToProps(state) {

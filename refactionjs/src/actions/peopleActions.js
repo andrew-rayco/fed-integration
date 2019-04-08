@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+import * as helpers from '../js/helpers';
 
 const data = '/db.json';
 
@@ -9,34 +10,12 @@ export function receivePeople(peopleData) {
   };
 }
 
-export function fetchPeople(id) {
+export function fetchPeople(id='everyone') {
   return dispatch => {
     return fetch(data)
     .then(response => {
       return response.json().then(people => {
-        let chosenPeople;
-        switch (id) {
-          case 'male':
-          case 'female':
-            chosenPeople = people.filter(person => person.gender === id);
-            return chosenPeople;
-            break;
-          case 'over30':
-          case 'under30':
-            chosenPeople = people.filter(person => {
-              if (id === 'over30') {
-                return person.age >= 30;
-              } else {
-                return person.age < 30;
-              };
-            })
-            return chosenPeople;
-            break;
-          default:
-            chosenPeople = people;
-            return chosenPeople;
-        };
-
+        const chosenPeople = helpers.getSelectedPeople(people, id);
         return {
           people: chosenPeople,
           status: response.status

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as peopleActions from '../actions/peopleActions';
+import * as peopleActions from '../../actions/peopleActions';
 import PropTypes from 'prop-types';
 
 class Header extends React.Component {
