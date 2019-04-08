@@ -1,21 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  handleClick(e) {
+    console.log(e.target)
+  }
+
   render() {
     return (
-      <div className="header">
-        <h1><Link to="/">People</Link></h1>
+      <div className="header" onClick={(e) => this.handleClick(e)}>
+        <h1>People</h1>
         <ul>
-          <li><Link to="/">Everyone</Link></li>
-          <li><Link to="/male">Male</Link></li>
-          <li><Link to="/female">Female</Link></li>
-          <li><Link to="/over30">Over 30</Link></li>
-          <li><Link to="/under30">Under 30</Link></li>
+          <li>Everyone</li>
+          <li>Male</li>
+          <li>Female</li>
+          <li>Over 30</li>
+          <li>Under 30</li>
         </ul>
       </div>
     )
   }
-}
+};
 
-export default Header
+export default Header;

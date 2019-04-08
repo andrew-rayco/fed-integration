@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     mode: 'development',
-    entry: "./refactionjs/src/js/App.js",
+    entry: "./refactionjs/src/js/index.js",
     output: {
         path: path.resolve(__dirname, "refactionjs/public"),
         filename: "bundle.js"

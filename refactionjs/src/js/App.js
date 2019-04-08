@@ -1,14 +1,13 @@
-import React from 'react'
+import React from 'react';
 import {
   HashRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
-import ReactDOM from 'react-dom'
-import '../css/index.scss';
+} from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
-import Header from './Header'
-import NameList from './NameList'
+import Header from './Header';
+import NameList from './NameList';
 
 class App extends React.Component {
 
@@ -22,6 +21,6 @@ class App extends React.Component {
       </Router>
     )
   }
-}
+};
 
-ReactDOM.render(<App />, document.getElementById('root'))
+export default App;
