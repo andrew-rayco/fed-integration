@@ -15,7 +15,9 @@ class NameList extends React.Component {
     let peopleList = [];
     if (people) {
       people.map(person =>
-        peopleList.push(<li key={person._id}>{person.name} {person.age}</li>)
+        peopleList.push(
+          <li key={person._id} className="person">{person.name} {person.age}</li>
+        )
       );
     }
     return peopleList;

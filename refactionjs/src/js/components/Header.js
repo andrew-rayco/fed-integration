@@ -17,7 +17,7 @@ class Header extends React.Component {
     return (
       <div className="header" onClick={(e) => this.handleClick(e)}>
         <h1 data-nav="everyone">People</h1>
-        <ul>
+        <ul className="nav">
           <li data-nav="everyone">Everyone</li>
           <li data-nav="male">Male</li>
           <li data-nav="female">Female</li>

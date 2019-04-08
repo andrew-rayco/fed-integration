@@ -5,38 +5,39 @@
   align-items: center;
 }
 
-h1 a {
+h1 {
   color: #3E4147;
-  font-family: 'Oswald';
+  font-family: 'Oswald', sans-serif;
   font-size: 84px;
   font-weight: 600;
   line-height: 96px;
   margin-bottom: 48px;
   text-transform: uppercase;
   text-decoration: none;
+  transition: color .5s;
 
   &:hover {
     color: #CC4425;
+    cursor: pointer;
   }
 }
 
-li {
+.nav li {
   display: inline;
-  padding-right: 1rem;
-  font-family: 'Arvo';
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  font-family: 'Arvo', serif;
+  color: #CC4425;
+  border-bottom: 2px solid #3E4147;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all .5s;
 
-  a {
-    color: #CC4425;
-    border-bottom: 1px solid #3E4147;
-  	font-weight: 700;
-  	text-decoration: none;
-    transition: border-bottom .3s;
-
-    &:hover {
-      color: #CC4425;
-      border-bottom: 4px solid #3E4147;
-      transition: border-bottom .3s;
-    }
+  &:hover {
+    color: #3E4147;
+    border-bottom: 2px solid #CC4425;
+    transition: all .5s;
+    cursor: pointer;
   }
 }
 
@@ -45,10 +46,12 @@ li {
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
+  list-style: none;
 }
+
 .person {
 	color: #3E4147;
-	font-family: 'Arvo';
+	font-family: 'Arvo', serif;
 	font-size: 34px;
 	font-weight: 500;
 	line-height: 36px;
