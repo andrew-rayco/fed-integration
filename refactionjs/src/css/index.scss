@@ -2,6 +2,12 @@
 $orange: #CC4425;
 $grey: #3E4147;
 
+// Mixins
+@mixin above550 {
+    @media screen and (min-width: 550px) {
+        @content
+    }
+}
 
 .header {
   display: flex;
@@ -27,9 +33,10 @@ h1 {
 }
 
 .nav li {
-  display: inline;
+  display: flex;
   font-size: 1.2rem;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   font-family: 'Arvo', serif;
   color: $orange;
   border-bottom: 2px solid $grey;
@@ -46,6 +53,11 @@ h1 {
 
   &.active {
     color: $grey;
+  }
+
+  @include above550 {
+    display: inline;
+    margin-bottom: 1rem;
   }
 }
 
