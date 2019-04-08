@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 
-const data = '../../db.json';
+const data = '/db.json';
 
 export function receivePeople(json) {
   return {
@@ -12,10 +12,7 @@ export function receivePeople(json) {
 export function fetchPeople() {
   return dispatch => {
     return fetch(data)
-    .then(response => {
-      console.log(response);
-      return response.json();
-    })
-    .then(json => dispatch(receivePeople(json)));
+    .then(response => response.json())
+    .then(json => dispatch(receivePeople(json)))
   };
 }

@@ -1,52 +1,42 @@
-import React from 'react'
-import data from '../db.js'
-
-const findPeeps = (hash) => {
-  const newHash = hash.split('/')[1]
-  switch(newHash) {
-    case 'male':
-    case 'female':
-      const peopleGender = data.filter((person) => {
-        return person.gender === newHash
-      });
-      return renderPeeps(peopleGender);
-      break;
-    case 'over30':
-    case 'under30':
-      const peopleAge = data.filter((person) => {
-        if (newHash === 'over30') {
-          return person.age >= 30;
-        } else {
-          return person.age < 30;
-        };
-      })
-      return renderPeeps(peopleAge);
-      break;
-    default:
-      return renderPeeps(data);
-  }
-  return newHash;
-}
-
-const renderPeeps = (people) => {
-  let selectedPeople = [];
-  people.map((person) => {
-    selectedPeople.push(<li className="person">{person.name} {person.age}</li>)
-  });
-  return selectedPeople;
-}
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as peopleActions from '../actions/peopleActions';
+import PropTypes from 'prop-types';
 
 class NameList extends React.Component {
+  componentDidMount() {
+    this.props.peopleActions.fetchPeople();
+  }
 
   render() {
     return (
       <div className="name-list">
         <ul>
-          { findPeeps(window.location.hash) }
         </ul>
       </div>
     )
   }
+}
+
+NameList.propTypes = {
+  peopleActions: PropTypes.object,
+  people: PropTypes.array
 };
 
-export default NameList;
+function mapStateToProps(state) {
+  return {
+    people: state.people
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    peopleActions: bindActionCreators(peopleActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NameList);
