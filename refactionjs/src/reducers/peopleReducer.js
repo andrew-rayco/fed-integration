@@ -1,5 +1,5 @@
 import initialState from './initialState';
-import { RECEIVE_PEOPLE } from '../actions/actionTypes';
+import { Add active states and classes to menuRECEIVE_PEOPLE } from '../actions/actionTypes';
 
 export default function people(state = initialState.people, action) {
   switch (action.type) {
