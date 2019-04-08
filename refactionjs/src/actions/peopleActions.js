@@ -3,7 +3,6 @@ import * as types from './actionTypes';
 const data = '/db.json';
 
 export function receivePeople(peopleData) {
-  console.log('peopleData', peopleData);
   return {
     type: types.RECEIVE_PEOPLE,
     people: peopleData

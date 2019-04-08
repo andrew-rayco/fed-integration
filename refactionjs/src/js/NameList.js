@@ -6,13 +6,24 @@ import PropTypes from 'prop-types';
 
 class NameList extends React.Component {
   componentDidMount() {
-    this.props.peopleActions.fetchPeople();
+    const { fetchPeople } = this.props.peopleActions;
+    fetchPeople();
+  }
+
+  renderPeople() {
+    const { people } = this.props;
+    let peopleList = [];
+    people.map(person =>
+      peopleList.push(<li key={person._id}>{person.name} {person.age}</li>)
+    );
+    return peopleList;
   }
 
   render() {
     return (
       <div className="name-list">
         <ul>
+          { this.renderPeople() }
         </ul>
       </div>
     )
