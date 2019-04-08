@@ -7,7 +7,8 @@
         "start": "webpack --watch & webpack-dev-server --open-page 'webpack-dev-server/'",
         "watch": "webpack --watch",
         "refaction-build": "webpack --config webpack.config.js",
-        "css-scss": "node-sass --watch css-html/src -o css-html/public/css"
+        "css-scss": "node-sass --watch css-html/src -o css-html/public/css",
+        "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/css-html/public\""
     },
     "repository": {
         "type": "git",
@@ -26,7 +27,9 @@
         "babel-loader": "^7.1.5",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
+        "concurrently": "^4.1.0",
         "css-loader": "^2.1.1",
+        "http-server": "^0.11.1",
         "mini-css-extract-plugin": "^0.5.0",
         "node-sass": "^4.11.0",
         "sass-loader": "^7.1.0",

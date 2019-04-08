@@ -1,4 +1,19 @@
-# Front End Developer - Technical Test
+# Front End Developer - Technical Test - Andy Condon
+
+## Code challenges
+### CSS/HTML challenge
+To view result in browser:
+```
+npm install
+npm run open
+```
+
+### JavaScript challenge
+To view in browser:
+```
+npm install (if you haven't already done so)
+npm start
+```
 
 ## CSS/HTML questions
 ### 1. Give a brief description of the Box Model
