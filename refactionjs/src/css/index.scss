@@ -1,0 +1,81 @@
+// Colour variables
+$orange: #CC4425;
+$grey: #3E4147;
+
+// Mixins
+@mixin above550 {
+    @media screen and (min-width: 550px) {
+        @content
+    }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: $grey;
+  font-family: 'Oswald', sans-serif;
+  font-size: 84px;
+  font-weight: 600;
+  line-height: 96px;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color .5s;
+
+  &:hover {
+    color: $orange;
+    cursor: pointer;
+  }
+}
+
+.nav li {
+  display: flex;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Arvo', serif;
+  color: $orange;
+  border-bottom: 2px solid $grey;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all .5s;
+
+  &:hover {
+    color: $grey;
+    border-bottom: 2px solid $orange;
+    transition: all .5s;
+    cursor: pointer;
+  }
+
+  &.active {
+    color: $grey;
+  }
+
+  @include above550 {
+    display: inline;
+    margin-bottom: 1rem;
+  }
+}
+
+
+.name-list ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  list-style: none;
+}
+
+.person {
+	color: $grey;
+	font-family: 'Arvo', serif;
+	font-size: 34px;
+	font-weight: 500;
+	line-height: 36px;
+	letter-spacing: -0.01em;
+	margin-bottom: 28px;
+}
