@@ -1,5 +1,5 @@
 import * as types from './actionTypes';
-import * as helpers from '../js/helpers';
+import * as helpers from '../js/helpers/helpers';
 
 const data = '/db.json';
 
