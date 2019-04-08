@@ -63,3 +63,4 @@ typings/
 # build files
 css-html/public/css
 refactionjs/public/bundle.js
+refactionjs/public/index.css

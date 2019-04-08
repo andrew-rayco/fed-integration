@@ -1,3 +1,7 @@
+// Colour variables
+$orange: #CC4425;
+$grey: #3E4147;
+
 
 .header {
   display: flex;
@@ -6,7 +10,7 @@
 }
 
 h1 {
-  color: #3E4147;
+  color: $grey;
   font-family: 'Oswald', sans-serif;
   font-size: 84px;
   font-weight: 600;
@@ -17,7 +21,7 @@ h1 {
   transition: color .5s;
 
   &:hover {
-    color: #CC4425;
+    color: $orange;
     cursor: pointer;
   }
 }
@@ -27,19 +31,24 @@ h1 {
   font-size: 1.2rem;
   margin-right: 1rem;
   font-family: 'Arvo', serif;
-  color: #CC4425;
-  border-bottom: 2px solid #3E4147;
+  color: $orange;
+  border-bottom: 2px solid $grey;
   font-weight: 400;
   text-decoration: none;
   transition: all .5s;
 
   &:hover {
-    color: #3E4147;
-    border-bottom: 2px solid #CC4425;
+    color: $grey;
+    border-bottom: 2px solid $orange;
     transition: all .5s;
     cursor: pointer;
   }
+
+  &.active {
+    color: $grey;
+  }
 }
+
 
 .name-list ul {
   display: flex;
@@ -50,7 +59,7 @@ h1 {
 }
 
 .person {
-	color: #3E4147;
+	color: $grey;
 	font-family: 'Arvo', serif;
 	font-size: 34px;
 	font-weight: 500;

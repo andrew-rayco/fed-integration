@@ -6,7 +6,8 @@ const data = '/db.json';
 export function receivePeople(peopleData) {
   return {
     type: types.RECEIVE_PEOPLE,
-    people: peopleData
+    people: peopleData,
+    active: peopleData.active
   };
 }
 
@@ -18,7 +19,8 @@ export function fetchPeople(id='everyone') {
         const chosenPeople = helpers.getSelectedPeople(people, id);
         return {
           people: chosenPeople,
-          status: response.status
+          status: response.status,
+          active: id
         }
       })
     })

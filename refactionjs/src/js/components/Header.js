@@ -13,16 +13,23 @@ class Header extends React.Component {
     return;
   }
 
+  activeClass(name) {
+    const { active } = this.props;
+    if (active === name) {
+      return 'active'
+    };
+  }
+
   render() {
     return (
       <div className="header" onClick={(e) => this.handleClick(e)}>
         <h1 data-nav="everyone">People</h1>
         <ul className="nav">
-          <li data-nav="everyone">Everyone</li>
-          <li data-nav="male">Male</li>
-          <li data-nav="female">Female</li>
-          <li data-nav="over30">Over 30</li>
-          <li data-nav="under30">Under 30</li>
+          <li data-nav="everyone" className={this.activeClass('everyone')}>Everyone</li>
+          <li data-nav="male" className={this.activeClass('male')}>Male</li>
+          <li data-nav="female" className={this.activeClass('female')}>Female</li>
+          <li data-nav="over30" className={this.activeClass('over30')}>Over 30</li>
+          <li data-nav="under30" className={this.activeClass('under30')}>Under 30</li>
         </ul>
       </div>
     )
@@ -30,8 +37,15 @@ class Header extends React.Component {
 };
 
 Header.propTypes = {
-  peopleActions: PropTypes.object
+  peopleActions: PropTypes.object,
+  active: PropTypes.string
 };
+
+function mapStateToProps(state) {
+  return {
+    active: state.people.active
+  }
+}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -39,4 +53,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
